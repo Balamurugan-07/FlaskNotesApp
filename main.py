@@ -6,4 +6,3 @@ app = create_app()
 # This avoids when main.py is imported instead of running it
 if __name__ == "__main__": 
   app.run(debug=True) # auto run when change is saved. False in production
-
