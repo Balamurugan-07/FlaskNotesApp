@@ -1,10 +1,14 @@
-from flask import Blueprint, flash, render_template, request, jsonify
+from flask import Blueprint, flash, redirect, render_template, request, jsonify, url_for
 from flask_login import login_required, current_user
 from .models import Note
 from . import db
 import json
 
 views = Blueprint('views', __name__)
+
+@views.route("/")
+def index():
+  return redirect(url_for("views.home"))
 
 @views.route('/home', methods=['GET', "POST"])
 @login_required
